@@ -2,15 +2,24 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
-export function Mark({ className }: { className?: string }) {
+export function Mark({
+  className,
+  size = 40,
+  priority = false,
+}: {
+  className?: string;
+  size?: number;
+  priority?: boolean;
+}) {
   return (
     <Image
       src="/mark.png"
       alt=""
-      width={512}
-      height={512}
-      sizes="80px"
-      className={cn("w-auto", className ?? "h-10")}
+      width={size}
+      height={size}
+      sizes={`${size}px`}
+      priority={priority}
+      className={cn("shrink-0", className)}
     />
   );
 }

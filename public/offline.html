@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3eee4" />
+    <title>آفلاین · دیوان بابا قاسم</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f3eee4;
+        --ink: #1a1714;
+        --brown: #6a5344;
+        --gold: #6d5430;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 2rem 1.25rem;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Tahoma, "Geeza Pro", "Noto Naskh Arabic", sans-serif;
+      }
+
+      main {
+        width: min(28rem, 100%);
+        text-align: right;
+      }
+
+      img {
+        width: 4.5rem;
+        height: auto;
+      }
+
+      p {
+        margin: 1.75rem 0 0;
+        color: var(--gold);
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        margin: 0.8rem 0 0;
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+        font-weight: 400;
+        line-height: 1.45;
+      }
+
+      .note {
+        max-width: 22rem;
+        color: var(--brown);
+        font-size: 1.05rem;
+        line-height: 2;
+      }
+
+      button {
+        margin-top: 1.75rem;
+        border: 0;
+        border-bottom: 1px solid #d9d0c2;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        font-size: 0.9rem;
+        cursor: pointer;
+        padding: 0 0 0.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/mark.png" alt="" width="72" height="72" />
+      <p>بدون اتصال</p>
+      <h1>این برگ الان باز نمی‌شود.</h1>
+      <p class="note">صفحه‌هایی که پیش‌تر خوانده‌ای روی دستگاه مانده‌اند. برای بقیه، اتصال را بررسی کن و دوباره تلاش کن.</p>
+      <button type="button" onclick="location.reload()">تلاش دوباره</button>
+    </main>
+  </body>
+</html>

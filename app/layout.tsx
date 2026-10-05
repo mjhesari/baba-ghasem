@@ -3,6 +3,7 @@ import { Amiri, Vazirmatn } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { RegisterServiceWorker } from "@/components/pwa/register-service-worker";
 import { JsonLd } from "@/components/ui/editorial";
 import { websiteJsonLd } from "@/lib/metadata";
 import { site } from "@/lib/site";
@@ -29,8 +30,16 @@ export const metadata: Metadata = {
     template: `%s · ${site.title}`,
   },
   description: site.description,
-  applicationName: site.title,
+  applicationName: site.name,
   authors: [{ name: site.name }],
+  appleWebApp: {
+    capable: true,
+    title: site.name,
+    statusBarStyle: "default",
+  },
+  other: {
+    "apple-mobile-web-app-capable": "yes",
+  },
   openGraph: {
     title: site.title,
     description: site.description,
@@ -69,6 +78,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <SiteFooter />
         <JsonLd data={websiteJsonLd()} />
+        <RegisterServiceWorker />
         <noscript>
           <style>{`[style*="opacity:0"],[style*="opacity: 0"]{opacity:1!important;transform:none!important}`}</style>
         </noscript>

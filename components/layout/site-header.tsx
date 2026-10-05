@@ -81,9 +81,11 @@ export function SiteHeader() {
         className="mx-auto flex h-[var(--header-h)] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8"
         {...(open ? { inert: true } : {})}
       >
-        <Link href="/" className="inline-flex items-center gap-2.5 text-ink">
-          <Mark />
-          <span className="font-serif text-[1.55rem] leading-none">{site.name}</span>
+        <Link href="/" className="inline-flex items-center gap-2 text-ink sm:gap-2.5">
+          <Mark priority size={36} />
+          <span className="whitespace-nowrap font-serif text-[1.35rem] leading-none sm:text-[1.55rem]">
+            {site.name}
+          </span>
         </Link>
 
         <nav aria-label="اصلی" className="hidden items-center gap-5 lg:flex">
@@ -130,7 +132,7 @@ export function SiteHeader() {
               className="inline-flex items-center gap-2.5 text-ink"
               onClick={() => setOpenPath(null)}
             >
-              <Mark className="h-9" />
+              <Mark size={32} />
               <span className="font-serif text-xl leading-none">{site.name}</span>
             </Link>
             <button
