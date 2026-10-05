@@ -5,7 +5,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 import Link from "next/link";
 import { useRef } from "react";
 
-import { Ornament } from "@/components/ui/editorial";
+import { Wordmark } from "@/components/brand/logo";
 import { site } from "@/lib/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -26,17 +26,9 @@ export function Hero() {
     >
       <motion.div style={{ y }} className="mx-auto w-full max-w-3xl text-center">
         <p className="text-sm text-gold">دفتر خانوادگی</p>
-        <h1 className="mt-6 font-serif text-[clamp(3.4rem,10vw,6.6rem)] leading-[1.18] text-ink">
-          {site.name}
+        <h1 className="mt-8 flex justify-center">
+          <Wordmark priority />
         </h1>
-        <motion.div
-          className="mt-8"
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.1, delay: 0.08, ease }}
-        >
-          <Ornament />
-        </motion.div>
         <motion.p
           className="mx-auto mt-8 max-w-[18em] font-serif text-[1.45rem] leading-[2.15] text-brown italic sm:text-[1.7rem]"
           initial={reduce ? false : { opacity: 0, y: 8 }}
