@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 
+import { Mark } from "@/components/brand/logo";
 import { navItems, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -80,8 +81,9 @@ export function SiteHeader() {
         className="mx-auto flex h-[var(--header-h)] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8"
         {...(open ? { inert: true } : {})}
       >
-        <Link href="/" className="font-serif text-[1.55rem] leading-none text-ink">
-          {site.name}
+        <Link href="/" className="inline-flex items-center gap-2.5 text-ink">
+          <Mark />
+          <span className="font-serif text-[1.55rem] leading-none">{site.name}</span>
         </Link>
 
         <nav aria-label="اصلی" className="hidden items-center gap-5 lg:flex">
@@ -123,7 +125,14 @@ export function SiteHeader() {
       {open ? (
         <div id={menuId} className="fixed inset-0 z-50 bg-paper px-6 pt-6 lg:hidden">
           <div className="flex items-center justify-between">
-            <p className="font-serif text-xl">فهرست</p>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2.5 text-ink"
+              onClick={() => setOpenPath(null)}
+            >
+              <Mark className="h-9" />
+              <span className="font-serif text-xl leading-none">{site.name}</span>
+            </Link>
             <button
               ref={closeRef}
               type="button"

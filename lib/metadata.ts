@@ -56,6 +56,7 @@ export function websiteJsonLd() {
     description: site.description,
     inLanguage: "fa",
     url: site.url,
+    logo: `${site.url}/logo.png`,
     potentialAction: {
       "@type": "SearchAction",
       target: `${site.url}/search?q={query}`,

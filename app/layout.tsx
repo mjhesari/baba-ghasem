@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Amiri, Vazirmatn } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -37,8 +37,19 @@ export const metadata: Metadata = {
     locale: site.locale,
     type: "website",
     siteName: site.title,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: site.title }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    images: ["/og.png"],
   },
   robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f3eee4",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
